@@ -8,6 +8,14 @@ const port = process.env.PORT;
 
 app.use(bodyParser.json());
 
+app.get("/", (req: Request, res: Response) => {
+  res.json(
+    {
+      message: "Welcome to Bank of Z Financial Tracker API!",
+    }
+  );
+});
+
 // Get All Transactions
 app.get("/transactions", (req: Request, res: Response) => {
   res.json(transactions);
